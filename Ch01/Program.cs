@@ -10,7 +10,9 @@ namespace Ch01
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("안녕하세요");
+            int result = 0;
+            result = 100 - 50;
+            Console.WriteLine(result);
         }
     }
 }
