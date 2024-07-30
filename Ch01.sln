@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch01", "Ch01\Ch01.csproj", "{1332B66F-DDC1-4ABF-9637-D40A7CF19904}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch01Console", "Ch01Console\Ch01Console.csproj", "{1332B66F-DDC1-4ABF-9637-D40A7CF19904}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch01Form", "Ch01Form\Ch01Form.csproj", "{9C512D0B-1510-4204-8307-9CED370CE28B}"
 EndProject
