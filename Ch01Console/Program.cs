@@ -10,9 +10,16 @@ namespace Ch01Console
     {
         static void Main(string[] args)
         {
-            int result = 0;
-            result = 100 - 50;
-            Console.WriteLine(result);
+            int a1 = 200;
+            int a2 = 100;
+
+            Console.WriteLine("a1 + a2 = " + (a1 + a2));
+            Console.WriteLine("a1 - a2 = " + (a1 - a2));
+            Console.WriteLine("a1 * a2 = " + (a1 * a2));
+            Console.WriteLine("a1 / a2 = " + (a1 / a2));
+            Console.WriteLine("a1 % a2 = " + (a1 % a2));
+
+
         }
     }
 }
