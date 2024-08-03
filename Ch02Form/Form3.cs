@@ -63,7 +63,7 @@ namespace Ch02Form
             {
                 x1 = x;
                 y1 = y;
-            } else if (clickCount % 2 == 1)
+            } else //if (clickCount % 2 == 1)
             {
                 x2 = x;
                 y2 = y;
