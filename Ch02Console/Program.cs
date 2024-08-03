@@ -130,7 +130,7 @@ namespace Ch02Console
         }
 
 
-        static void Main(string[] args)
+        static void Main_05(string[] args)
         {
 
 
@@ -145,9 +145,28 @@ namespace Ch02Console
 
             Console.WriteLine(i++);
             Console.WriteLine(++i);
+        }
+
+
+        static void Main(string[] args)
+        {
+            int a = 10;
+            int b = 20;
+
+            bool result1 = a == b;
+            bool result2 = a != b;
+            bool result3 = a > b;
+            bool result4 = a < b;
+            bool result5 = a >= b;
+            bool result6 = a <= b;
+
+            //bool result7 = a => b;
+            //bool result 8 = a =< b;
 
 
 
         }
+
+
     }
 }
