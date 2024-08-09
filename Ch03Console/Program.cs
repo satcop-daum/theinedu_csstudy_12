@@ -107,7 +107,7 @@ namespace Ch03Console
 
         }
 
-        static void Main(string[] args)
+        static void Main_02(string[] args)
         {
             // 숫자를 입력(1~12범위)
             // 숫자에 해당하는 월의 일수를 구하는 프로그램
@@ -179,5 +179,73 @@ namespace Ch03Console
 
 
         }
+ 
+
+        static void Main_03(string[] args)
+        {
+            for (int j = 1; j <= 9; j++)
+            {
+                for (int i = 2; i <= 9; i++)
+                {
+                    Console.Write("{0} x {1} = {2}\t", i, j, i * j);
+                }
+                Console.WriteLine();
+            }
+        }
+
+
+        static void Main(string[] args)
+        {
+            //숫자값을 계속 입력(한개의 입력은 엔터) 받음.
+            //입력받은 값은 계속 누적
+            //0을 입력하면 계속 입력을 종료하고 누적값 출력
+
+            /*
+            int sum = 0;
+            bool runYn = false;
+
+            while (runYn)
+            {
+                int readValue = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("입력값:" + readValue);
+
+                if (readValue == -1)
+                {
+                    runYn = false;
+                    //break;
+                    continue;
+                }
+
+                sum += readValue;
+                Console.WriteLine("누적값: " + sum);
+            }
+            Console.WriteLine("종료전 누적값: " + sum);
+            */
+
+
+            int sum = 0;
+            bool runYn = false;
+
+            do
+            {
+                int readValue = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("입력값:" + readValue);
+
+                if (readValue == -1)
+                {
+                    runYn = false;
+                    //break;
+                    continue;
+                }
+
+                sum += readValue;
+                Console.WriteLine("누적값: " + sum);
+            } while (runYn);
+
+            Console.WriteLine("종료전 누적값: " + sum);
+
+
+        }
+
     }
 }
