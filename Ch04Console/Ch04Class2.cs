@@ -22,6 +22,11 @@ namespace Ch04Console
             value++;
         }
 
+        public void DisplayClass(String str)
+        {
+
+        }
+
 
     }
 }
