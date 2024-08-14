@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,11 +19,58 @@ namespace Ch04Console
             //Function5();
             //Function6();
 
-            Function7();
+            //Function7();
+            //Function8();
+
+            Function9();
+
         }
 
+        private static void Function9()
+        {
 
-         static void Function7()
+            Ch04Class2 myClass = new Ch04Class2();
+
+            int value = 100;
+            Console.WriteLine("Main value: " + value);
+
+            myClass.Display(value);
+
+            Console.WriteLine("Main value: " + value);
+
+            Console.WriteLine("=====================");
+            
+            value = 100;
+            Console.WriteLine("Main value: " + value);
+
+            myClass.DisplayRef(ref value);
+
+            Console.WriteLine("Main value: " + value);
+
+        }
+
+        private static void Function8()
+        {
+
+            Random random = new Random();
+
+            Ch04Class myClass = new Ch04Class();
+            myClass.Show(false);
+            myClass.Show2();
+            myClass.Show(false);
+            myClass.Show2();
+
+            Console.WriteLine("==========================");
+            Ch04Class yourClass = new Ch04Class();
+            yourClass.Show(false);
+            yourClass.Show2();
+            yourClass.Show(false);
+            yourClass.Show2();
+
+
+        }
+
+        static void Function7()
         {
 
             string str = "반도체 장비 및 제어 시스템 S/W개발자";
