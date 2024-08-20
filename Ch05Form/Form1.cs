@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,6 +26,7 @@ namespace Ch05Form
         {
             //MessageBox.Show("버튼 클릭!!!!");
 
+            
         }
 
 
@@ -99,12 +102,12 @@ namespace Ch05Form
                 }
 
 
-
                 if (now.Hour == nudAlarmHour.Value 
                     && now.Minute == nudAlarmMinute.Value)
                 {
                     cbAlarmYn.Checked = false;
-                    MessageBox.Show("알람시간이되었습니다.");
+                    //MessageBox.Show("알람시간이되었습니다.");
+                    shutdown();
                 }
 
             }
@@ -204,34 +207,55 @@ namespace Ch05Form
                 return;
             }
 
-            string text = FileUtils.GetTextFromFile(configFilePath);
+            try
+            {
+                string text = FileUtils.GetTextFromFile(configFilePath);
 
-            string[] arrValue = text.Split('|');
-            // ==> 255|255|0|255|0|0|False|11|22
+                string[] arrValue = text.Split('|');
+                // ==> 255|255|0|255|0|0|False|11|22
 
-            int foreColorRed = Convert.ToInt32(arrValue[0]);
-            int foreColorGreen = Convert.ToInt32(arrValue[1]);
-            int foreColorBlue = Convert.ToInt32(arrValue[2]);
+                int foreColorRed = Convert.ToInt32(arrValue[0]);
+                int foreColorGreen = Convert.ToInt32(arrValue[1]);
+                int foreColorBlue = Convert.ToInt32(arrValue[2]);
 
-            int backColorRed = Convert.ToInt32(arrValue[3]);
-            int backColorGreen = Convert.ToInt32(arrValue[4]);
-            int backColorBlue = Convert.ToInt32(arrValue[5]);
+                int backColorRed = Convert.ToInt32(arrValue[3]);
+                int backColorGreen = Convert.ToInt32(arrValue[4]);
+                int backColorBlue = Convert.ToInt32(arrValue[5]);
 
-            bool alarmYn = Convert.ToBoolean(arrValue[6]);
+                bool alarmYn = Convert.ToBoolean(arrValue[6]);
 
-            int hour = Convert.ToInt32(arrValue[7]);
-            int minute = Convert.ToInt32(arrValue[8]);
+                int hour = Convert.ToInt32(arrValue[7]);
+                int minute = Convert.ToInt32(arrValue[8]);
 
 
-            lblTime.ForeColor = Color.FromArgb(foreColorRed, foreColorGreen, foreColorBlue);
-            lblTime.BackColor = Color.FromArgb(backColorRed, backColorGreen, backColorBlue);
+                lblTime.ForeColor = Color.FromArgb(foreColorRed, foreColorGreen, foreColorBlue);
+                lblTime.BackColor = Color.FromArgb(backColorRed, backColorGreen, backColorBlue);
 
-            cbAlarmYn.Checked = alarmYn;
+                cbAlarmYn.Checked = alarmYn;
 
-            nudAlarmHour.Value = hour;
-            nudAlarmMinute.Value = minute;
+                nudAlarmHour.Value = hour;
+                nudAlarmMinute.Value = minute;
+            }
+            catch (Exception ex)
+            {
+                {
+
+                }
+
+
+            
+            }
+
         }
 
+
+        void shutdown()
+        {
+
+            // 윈도우 종료 명령 실행
+            //Process.Start("shutdown", "/s /f /t 0");
+
+        }
 
 
     }

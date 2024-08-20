@@ -39,6 +39,7 @@
             this.nudAlarmMinute = new System.Windows.Forms.NumericUpDown();
             this.cbAlarmYn = new System.Windows.Forms.CheckBox();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
+            this.cklstAlaramList = new System.Windows.Forms.CheckedListBox();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAlarmHour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAlarmMinute)).BeginInit();
@@ -47,9 +48,9 @@
             // btnOK
             // 
             this.btnOK.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.Location = new System.Drawing.Point(20, 252);
+            this.btnOK.Location = new System.Drawing.Point(12, 104);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(177, 60);
+            this.btnOK.Size = new System.Drawing.Size(130, 46);
             this.btnOK.TabIndex = 0;
             this.btnOK.Text = "버튼 클릭";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -98,7 +99,7 @@
             // nudAlarmHour
             // 
             this.nudAlarmHour.Font = new System.Drawing.Font("Verdana", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudAlarmHour.Location = new System.Drawing.Point(316, 148);
+            this.nudAlarmHour.Location = new System.Drawing.Point(316, 104);
             this.nudAlarmHour.Maximum = new decimal(new int[] {
             24,
             0,
@@ -111,7 +112,7 @@
             // nudAlarmMinute
             // 
             this.nudAlarmMinute.Font = new System.Drawing.Font("Verdana", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudAlarmMinute.Location = new System.Drawing.Point(411, 148);
+            this.nudAlarmMinute.Location = new System.Drawing.Point(411, 104);
             this.nudAlarmMinute.Maximum = new decimal(new int[] {
             60,
             0,
@@ -126,17 +127,27 @@
             // 
             this.cbAlarmYn.AutoSize = true;
             this.cbAlarmYn.Font = new System.Drawing.Font("Verdana", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbAlarmYn.Location = new System.Drawing.Point(279, 163);
+            this.cbAlarmYn.Location = new System.Drawing.Point(279, 119);
             this.cbAlarmYn.Name = "cbAlarmYn";
             this.cbAlarmYn.Size = new System.Drawing.Size(15, 14);
             this.cbAlarmYn.TabIndex = 4;
             this.cbAlarmYn.UseVisualStyleBackColor = true;
+            // 
+            // cklstAlaramList
+            // 
+            this.cklstAlaramList.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cklstAlaramList.FormattingEnabled = true;
+            this.cklstAlaramList.Location = new System.Drawing.Point(12, 191);
+            this.cklstAlaramList.Name = "cklstAlaramList";
+            this.cklstAlaramList.Size = new System.Drawing.Size(242, 108);
+            this.cklstAlaramList.TabIndex = 5;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 324);
+            this.Controls.Add(this.cklstAlaramList);
             this.Controls.Add(this.cbAlarmYn);
             this.Controls.Add(this.nudAlarmMinute);
             this.Controls.Add(this.nudAlarmHour);
@@ -168,6 +179,7 @@
         private System.Windows.Forms.ToolStripMenuItem cmnTextColor;
         private System.Windows.Forms.ToolStripMenuItem cmnBackgroundColor;
         private System.Windows.Forms.ColorDialog colorDialog;
+        private System.Windows.Forms.CheckedListBox cklstAlaramList;
     }
 }
 
