@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +31,7 @@ namespace Ch05Form
         {
             //ResizeCotnrols();
 
+            LoadConfig();
         }
 
         private void frmMain_SizeChanged(object sender, EventArgs e)
@@ -113,5 +115,134 @@ namespace Ch05Form
         {
 
         }
+
+        private void lblTime_MouseClick(object sender, MouseEventArgs e)
+        {
+            contextMenuStrip1.Show();
+        }
+
+        private void cmnTextColor_Click(object sender, EventArgs e)
+        {
+            DialogResult result = colorDialog.ShowDialog();
+            if (result != DialogResult.OK) 
+            {
+                return;
+            }
+
+            lblTime.ForeColor = colorDialog.Color;
+
+        }
+
+        private void cmnBackgroundColor_Click(object sender, EventArgs e)
+        {
+            DialogResult result = colorDialog.ShowDialog();
+            if (result != DialogResult.OK)
+            {
+                return;
+            }
+
+            lblTime.BackColor = colorDialog.Color;
+
+        }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            saveData();
+        }
+
+        void saveData()
+        {
+            //텍스트색상(r,g,b): 0-255, 0-255, 0-255
+            //배경색상
+            //알람체크여부: true/false
+            //시간: 0~24
+            //분: 0~60
+
+            //텍스트형태 저장=> 문자열
+            /*
+            
+            210|122|98|124|57|49|true|17|30
+             
+            */
+
+            int foreColorRed = lblTime.ForeColor.R;
+            int foreColorGreen = lblTime.ForeColor.G;
+            int foreColorBlue = lblTime.ForeColor.B;
+
+            int backColorRed = lblTime.BackColor.R;
+            int backColorGreen = lblTime.BackColor.G;
+            int backColorBlue = lblTime.BackColor.B;
+
+            bool alarmYn = cbAlarmYn.Checked;
+
+            int hour = (int)nudAlarmHour.Value;
+            int minute = (int)nudAlarmMinute.Value;
+
+            string text = string.Format("{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}"
+                , foreColorRed
+                , foreColorGreen
+                , foreColorBlue
+                , backColorRed
+                , backColorGreen
+                , backColorBlue
+                , alarmYn
+                , hour
+                , minute);
+
+            string configFilePath = Application.StartupPath + "\\config.dat";
+            
+            FileUtils.SaveFileFromText(configFilePath, text);
+
+        }
+
+        private void LoadConfig()
+        {
+            string configFilePath = Application.StartupPath + "\\config.dat";
+
+            if (!File.Exists(configFilePath))
+            {
+                return;
+            }
+
+            string text = FileUtils.GetTextFromFile(configFilePath);
+
+            string[] arrValue = text.Split('|');
+            // ==> 255|255|0|255|0|0|False|11|22
+
+            int foreColorRed = Convert.ToInt32(arrValue[0]);
+            int foreColorGreen = Convert.ToInt32(arrValue[1]);
+            int foreColorBlue = Convert.ToInt32(arrValue[2]);
+
+            int backColorRed = Convert.ToInt32(arrValue[3]);
+            int backColorGreen = Convert.ToInt32(arrValue[4]);
+            int backColorBlue = Convert.ToInt32(arrValue[5]);
+
+            bool alarmYn = Convert.ToBoolean(arrValue[6]);
+
+            int hour = Convert.ToInt32(arrValue[7]);
+            int minute = Convert.ToInt32(arrValue[8]);
+
+
+            lblTime.ForeColor = Color.FromArgb(foreColorRed, foreColorGreen, foreColorBlue);
+            lblTime.BackColor = Color.FromArgb(backColorRed, backColorGreen, backColorBlue);
+
+            cbAlarmYn.Checked = alarmYn;
+
+            nudAlarmHour.Value = hour;
+            nudAlarmMinute.Value = minute;
+        }
+
+
+
     }
 }
+
+
+
+
+
+
+
+
+
+

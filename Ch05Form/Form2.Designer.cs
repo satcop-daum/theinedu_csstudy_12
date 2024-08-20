@@ -43,11 +43,11 @@
             // 
             // tbMemo
             // 
-            this.tbMemo.Location = new System.Drawing.Point(32, 43);
+            this.tbMemo.Location = new System.Drawing.Point(50, 48);
             this.tbMemo.Multiline = true;
             this.tbMemo.Name = "tbMemo";
             this.tbMemo.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.tbMemo.Size = new System.Drawing.Size(489, 212);
+            this.tbMemo.Size = new System.Drawing.Size(329, 152);
             this.tbMemo.TabIndex = 0;
             // 
             // ofDialog
@@ -60,7 +60,7 @@
             this.파일FToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(551, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(449, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -112,7 +112,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(551, 321);
+            this.ClientSize = new System.Drawing.Size(449, 241);
             this.Controls.Add(this.tbMemo);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;

@@ -36,37 +36,6 @@ namespace Ch05Form
         }
 
 
-        // filePath에 있는 파일을 읽어서 텍스트 문자열을 리턴하는 메서드
-        string getTextFromFile(string filePath)
-        {
-            StreamReader streamReader = new StreamReader(filePath);
-
-            string allText = "";
-            while (true)
-            {
-                string readText = streamReader.ReadLine();
-                if (readText == null)
-                {
-                    break;
-                }
-
-                allText += "\r\n" + readText;
-            }
-
-            return allText;
-        }
-
-        // text의 내용을 filePath의 파일에 저장하는 메서드
-        void saveFileFromText(string filePath, string text)
-        {  
-            File.WriteAllText(filePath, text);
-        }
-
-
-        private void btnFileSave_Click(object sender, EventArgs e)
-        {
-        }
-
         private void mnuNewFile_Click(object sender, EventArgs e)
         {
             tbMemo.Text = "";
@@ -81,7 +50,7 @@ namespace Ch05Form
                 return;
             }
 
-            tbMemo.Text = getTextFromFile(ofDialog.FileName);
+            tbMemo.Text = FileUtils.GetTextFromFile(ofDialog.FileName);
 
 
         }
@@ -94,7 +63,7 @@ namespace Ch05Form
                 return;
             }
 
-            saveFileFromText(sfDialog.FileName, tbMemo.Text);
+            FileUtils.SaveFileFromText(sfDialog.FileName, tbMemo.Text);
 
         }
     }

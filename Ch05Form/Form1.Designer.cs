@@ -31,10 +31,15 @@
             this.components = new System.ComponentModel.Container();
             this.btnOK = new System.Windows.Forms.Button();
             this.lblTime = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmnTextColor = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmnBackgroundColor = new System.Windows.Forms.ToolStripMenuItem();
             this.tmrMain = new System.Windows.Forms.Timer(this.components);
             this.nudAlarmHour = new System.Windows.Forms.NumericUpDown();
             this.nudAlarmMinute = new System.Windows.Forms.NumericUpDown();
             this.cbAlarmYn = new System.Windows.Forms.CheckBox();
+            this.colorDialog = new System.Windows.Forms.ColorDialog();
+            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAlarmHour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAlarmMinute)).BeginInit();
             this.SuspendLayout();
@@ -53,6 +58,7 @@
             // lblTime
             // 
             this.lblTime.BackColor = System.Drawing.Color.Black;
+            this.lblTime.ContextMenuStrip = this.contextMenuStrip1;
             this.lblTime.Font = new System.Drawing.Font("Lucida Console", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lblTime.Location = new System.Drawing.Point(12, 9);
@@ -61,6 +67,28 @@
             this.lblTime.TabIndex = 1;
             this.lblTime.Text = "label1";
             this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmnTextColor,
+            this.cmnBackgroundColor});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(176, 48);
+            // 
+            // cmnTextColor
+            // 
+            this.cmnTextColor.Name = "cmnTextColor";
+            this.cmnTextColor.Size = new System.Drawing.Size(175, 22);
+            this.cmnTextColor.Text = "텍스트 색상 변경...";
+            this.cmnTextColor.Click += new System.EventHandler(this.cmnTextColor_Click);
+            // 
+            // cmnBackgroundColor
+            // 
+            this.cmnBackgroundColor.Name = "cmnBackgroundColor";
+            this.cmnBackgroundColor.Size = new System.Drawing.Size(175, 22);
+            this.cmnBackgroundColor.Text = "배경 색상 변경...";
+            this.cmnBackgroundColor.Click += new System.EventHandler(this.cmnBackgroundColor_Click);
             // 
             // tmrMain
             // 
@@ -117,8 +145,10 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "윈폼 프로그래밍";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.SizeChanged += new System.EventHandler(this.frmMain_SizeChanged);
+            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nudAlarmHour)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAlarmMinute)).EndInit();
             this.ResumeLayout(false);
@@ -134,6 +164,10 @@
         private System.Windows.Forms.NumericUpDown nudAlarmHour;
         private System.Windows.Forms.NumericUpDown nudAlarmMinute;
         private System.Windows.Forms.CheckBox cbAlarmYn;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem cmnTextColor;
+        private System.Windows.Forms.ToolStripMenuItem cmnBackgroundColor;
+        private System.Windows.Forms.ColorDialog colorDialog;
     }
 }
 
