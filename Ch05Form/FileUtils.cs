@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Ch05Form
 {
-    internal class FileUtils
+    internal static class FileUtils
     {
 
         // filePath에 있는 파일을 읽어서 텍스트 문자열을 리턴하는 메서드
@@ -37,6 +37,7 @@ namespace Ch05Form
         {
             File.WriteAllText(filePath, text);
         }
+
 
     }
 }
