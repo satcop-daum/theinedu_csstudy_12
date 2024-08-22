@@ -36,8 +36,13 @@ namespace Ch06Form
             string dateString = e.Start.ToString("yyyyMMdd") + ".txt";
 
             Console.WriteLine(dateString);
+        }
 
-
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            checkedListBox1.Items.Add("운동하기");
+            checkedListBox1.Items.Add("공부하기");
+            checkedListBox1.Items.Add("독서하기", true);
         }
     }
 }
